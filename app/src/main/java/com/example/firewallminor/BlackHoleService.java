@@ -78,7 +78,7 @@ public class BlackHoleService extends VpnService {
         builder.addRoute("0:0:0:0:0:0:0:0", 0);
 
         // Add list of allowed applications
-        for (Rule rule : Rule.getRules(this))
+        /*for (Rule rule : Rule.getRules(this))
             if (!(wifi ? rule.wifi_blocked : rule.other_blocked)) {
                 Log.i(TAG, "Allowing " + rule.info.packageName);
                 try {
@@ -87,6 +87,9 @@ public class BlackHoleService extends VpnService {
                     Log.e(TAG, ex.toString() + "\n" + Log.getStackTraceString(ex));
                 }
             }
+        */
+
+        builder.addAllowedApplication('com.corget.gotraxx');
 
         // Build configure intent
         Intent configure = new Intent(this, ActivityMain.class);
