@@ -57,7 +57,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
         // On/off switch
         SwitchCompat swEnabled = (SwitchCompat) view.findViewById(R.id.swEnabled);
-        swEnabled.setChecked(prefs.getBoolean("enabled", false));
+        swEnabled.setChecked(prefs.getBoolean("enabled", true));
         swEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
